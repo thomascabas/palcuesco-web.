@@ -1,0 +1,12 @@
+{
+  "name": "palcuesco",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tienda web de Palcuesco: paltas en su punto con despacho el mismo día en Santiago",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

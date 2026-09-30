@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Palcuesco | Paltas en su punto, despacho el mismo día en Santiago</title>
+<meta name="description" content="Palta Hass elegida una por una y despachada con la madurez que tú eliges. Pide antes de las 13:00 y te llega hoy, de lunes a domingo en Santiago.">
+<meta name="theme-color" content="#EEF0D8">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="canonical" href="%%ORIGIN%%/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="Palcuesco">
+<meta property="og:title" content="Palcuesco | Paltas en su punto, el mismo día">
+<meta property="og:description" content="Palta Hass elegida una por una y despachada con la madurez que tú eliges. Pide antes de las 13:00 y te llega hoy, de lunes a domingo en Santiago.">
+<meta property="og:url" content="%%ORIGIN%%/">
+<meta property="og:image" content="%%ORIGIN%%/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Onest:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Permanent+Marker&display=swap">
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+<style>
+/* Layout: puesto de feria — letrero de cartón en el hero, cajones de fruta como tarjetas de producto */
+:root{
+  --paper:#EEF0D8; --surface:#FAFBEF; --ink:#1D2518; --muted:#586149; --line:#D3D8B6;
+  --leaf:#3E6A26; --leaf-ink:#FAFBEF; --flesh:#DCE39B; --pit:#8A5634;
+  --promo-bg:#1D2518; --promo-ink:#D8E27C; --foot-bg:#1D2518; --foot-ink:#EEF0D8; --foot-muted:#AAB394;
+  --display:"Bagel Fat One","Cooper Black",Georgia,serif;
+  --body:"Onest","Helvetica Neue",Arial,sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,Consolas,monospace;
+  --marker:"Permanent Marker","Comic Sans MS",cursive;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#12170F; --surface:#1B2217; --ink:#ECEFD6; --muted:#A8B192; --line:#2E3827;
+    --leaf:#A2CC6E; --leaf-ink:#12170F; --pit:#C08A5E;
+    --promo-bg:#1B2217; --promo-ink:#D8E27C; --foot-bg:#0B0F09; --foot-ink:#ECEFD6; --foot-muted:#99A286;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#12170F; --surface:#1B2217; --ink:#ECEFD6; --muted:#A8B192; --line:#2E3827;
+  --leaf:#A2CC6E; --leaf-ink:#12170F; --pit:#C08A5E;
+  --promo-bg:#1B2217; --promo-ink:#D8E27C; --foot-bg:#0B0F09; --foot-ink:#ECEFD6; --foot-muted:#99A286;
+}
+/* Paneles de color fruta: paleta fija en ambos temas */
+.on-flesh{
+  --ink:#1D2518; --surface:#FAFBEF; --muted:#4D5640; --line:rgba(29,37,24,.22);
+  --leaf:#3E6A26; --leaf-ink:#FAFBEF;
+  background:#DCE39B; color:#1D2518;
+}
+@property --skin{syntax:'<color>';inherits:true;initial-value:#2E2329}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+h1,h2{font-family:var(--display);font-weight:400;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(2.5rem,1.3rem + 4.4vw,4.7rem);line-height:1}
+h2{font-size:clamp(1.9rem,1.3rem + 2.3vw,3rem);line-height:1.05}
+h3{font:700 1.2rem/1.25 var(--body);margin:0}
+p{margin:0}
+a{color:inherit}
+.eyebrow{font:500 .76rem/1.2 var(--mono);text-transform:uppercase;letter-spacing:.14em}
+:focus-visible{outline:3px solid var(--leaf);outline-offset:3px;border-radius:6px}
+section[id]{scroll-margin-top:84px}
+
+/* Promo */
+.promo{background:var(--promo-bg);color:var(--promo-ink);overflow:hidden;font:500 .76rem/1 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.promo-track{display:flex;width:max-content;animation:marquee 38s linear infinite}
+.promo-track span{display:inline-flex;align-items:center;gap:22px;padding:11px}
+.promo-track span::after{content:"";width:7px;height:9px;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;background:#8FB24C}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* Header */
+.site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--paper);border-bottom:1px solid var(--line)}
+.head-row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px}
+.logo{display:inline-flex;align-items:center;gap:9px;font:400 1.8rem/1 var(--display);text-decoration:none;color:var(--ink)}
+.logo svg{height:36px;width:auto;flex:none;display:block}
+footer .logo svg{height:46px}
+nav.main{display:flex;gap:30px}
+nav.main a{text-decoration:none;font-weight:500}
+nav.main a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
+.cart-btn{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:7px 8px 7px 16px;font:600 .95rem var(--body);cursor:pointer}
+.cart-btn:hover{background:var(--ink);color:var(--paper)}
+.cart-count{min-width:24px;height:24px;border-radius:999px;background:var(--leaf);color:var(--leaf-ink);font:500 .78rem/24px var(--mono);text-align:center;padding-inline:6px}
+@media (max-width:720px){nav.main{display:none}}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:14px 24px;font:700 1rem/1.1 var(--body);cursor:pointer;border:2.5px solid var(--ink);text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+.btn-primary{background:var(--ink);color:var(--surface);box-shadow:4px 4px 0 var(--leaf)}
+.btn-primary:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--leaf)}
+.btn-primary:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--leaf)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--surface)}
+
+/* Hero */
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center;padding-block:clamp(36px,6vw,72px)}
+@media (max-width:880px){.hero-grid{grid-template-columns:minmax(0,1fr)}}
+.hero-copy{display:flex;flex-direction:column;gap:22px}
+.hero h1 em{font-style:normal;color:var(--leaf)}
+.lead{font-size:1.14rem;max-width:44ch}
+.price-row{display:flex;align-items:baseline;gap:10px 14px;flex-wrap:wrap}
+.price-big{font:400 2.4rem/1 var(--display);font-variant-numeric:tabular-nums}
+.per{font:500 .95rem var(--mono);color:var(--muted)}
+.off{background:var(--ink);color:var(--paper);font:500 .78rem/1 var(--mono);padding:7px 10px;border-radius:5px;letter-spacing:.04em;align-self:center}
+.cutoff{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;border:2px solid var(--ink);border-radius:999px;padding:8px 16px;font:500 .86rem/1.3 var(--mono);background:var(--surface);font-variant-numeric:tabular-nums}
+.cutoff i{width:10px;height:10px;border-radius:50%;background:var(--leaf);flex:none;animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.trust{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px;font:500 .8rem/1.3 var(--mono);color:var(--muted)}
+.trust li{display:inline-flex;align-items:center;gap:8px}
+.trust svg{width:14px;height:14px;flex:none;fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+.stage{display:flex;flex-direction:column;gap:16px;--skin:#2E2329;transition:--skin .7s ease}
+.stage[data-ripe="dias"]{--skin:#414B27}
+.stage[data-ripe="semana"]{--skin:#5A8530}
+.stage-panel{border:2px solid var(--ink);border-radius:28px;overflow:hidden}
+.stage-panel svg{width:100%;height:auto;display:block}
+.mk{font-family:var(--marker);fill:#1D2518}
+.stage-controls{display:flex;flex-direction:column;gap:10px}
+.stage-controls .eyebrow{color:var(--muted)}
+.seg{display:flex;width:100%;max-width:460px;border:2.5px solid var(--ink);border-radius:999px;padding:3px;background:var(--surface)}
+.seg button{flex:1;border:0;background:transparent;border-radius:999px;padding:9px 8px;font:600 .93rem var(--body);color:var(--ink);cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+.ripe-info{display:flex;flex-direction:column;gap:8px}
+.firm{display:flex;align-items:center;gap:12px;font:500 .76rem/1 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.pips{display:inline-flex;gap:5px}
+.pip{width:24px;height:9px;border-radius:5px;border:1.5px solid var(--ink)}
+.pip.on{background:var(--ink)}
+.ripe-text{max-width:48ch;min-height:3.1em}
+
+/* Sections */
+.section{padding-block:clamp(56px,8vw,100px)}
+.section-head{display:flex;flex-direction:column;gap:12px;max-width:660px;margin-bottom:clamp(28px,4vw,46px)}
+.section-head p{color:var(--muted);font-size:1.08rem}
+.section-head .eyebrow{color:var(--leaf)}
+
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;list-style:none;margin:0;padding:0}
+@media (max-width:980px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:540px){.steps{grid-template-columns:minmax(0,1fr)}}
+.step{display:flex;flex-direction:column;gap:12px;padding:22px;background:var(--surface);border:2px solid var(--ink);border-radius:18px}
+.step .eyebrow{color:var(--muted)}
+.step p{color:var(--muted)}
+.ico{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;background:var(--tint);border:2px solid #1D2518}
+.ico svg{width:30px;height:30px;fill:none;stroke:#1D2518;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+.band{background:#2C4520;color:#F3F5DE}
+.band .section-head p{color:#C9D4AE}
+.band .section-head .eyebrow{color:#D8E27C}
+.eq{display:flex;flex-wrap:wrap;align-items:center;gap:16px 12px}
+.chip{background:#FAFBEF;color:#1D2518;border:2.5px solid #1D2518;border-radius:999px;padding:11px 20px;font:600 1.08rem/1.2 var(--body);box-shadow:3px 3px 0 #1D2518}
+.eq .chip:nth-of-type(odd){transform:rotate(-2deg)}
+.eq .chip:nth-of-type(even){transform:rotate(1.5deg)}
+.op{font:400 2.1rem/1 var(--display);color:#D8E27C}
+.chip.total{background:#D8E27C;font:400 1.5rem/1.1 var(--display);padding:10px 24px;transform:rotate(-3deg)}
+
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+@media (max-width:820px){.products{grid-template-columns:minmax(0,1fr)}}
+.product{background:var(--surface);border:2px solid var(--ink);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.product-art{aspect-ratio:4/3;max-width:100%;border-bottom:2px solid var(--ink);background:var(--art);--skin:#2E2329;transition:--skin .6s ease}
+.product-art svg{width:100%;height:100%;display:block}
+.product-body{padding:24px;display:flex;flex-direction:column;gap:18px;flex:1}
+.product-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px 16px;flex-wrap:wrap}
+.product-top p{color:var(--muted);margin-top:4px}
+.price-col{text-align:right;display:flex;flex-direction:column;gap:5px}
+.price-mid{font:400 1.7rem/1 var(--display);font-variant-numeric:tabular-nums}
+.kilo{font:500 .8rem var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.specs{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 20px;margin:0;font-size:.97rem}
+.specs dt{font:500 .72rem/1.9 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.specs dd{margin:0;font-variant-numeric:tabular-nums}
+.ripe-pick{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.ripe-pick legend{font:500 .72rem/1 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:10px;padding:0}
+.ripe-pick input{position:absolute;opacity:0;width:1px;height:1px}
+.ripe-pick label{border:2px solid var(--ink);border-radius:999px;padding:7px 14px;font:600 .9rem var(--body);cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.ripe-pick label i{width:12px;height:12px;border-radius:50%;background:var(--dot);border:1.5px solid #1D2518;flex:none}
+.ripe-pick input:checked + label{background:var(--ink);color:var(--surface)}
+.ripe-pick input:checked + label i{border-color:var(--surface)}
+.ripe-pick input:focus-visible + label{outline:3px solid var(--leaf);outline-offset:3px}
+.product .btn{margin-top:auto;align-self:flex-start}
+
+.pack{margin-top:24px;display:grid;grid-template-columns:200px minmax(0,1fr) auto;align-items:center;gap:18px 28px;padding:22px 28px;border-radius:24px;border:2px solid #1D2518}
+@media (max-width:820px){.pack{grid-template-columns:minmax(0,1fr)}.pack svg{max-width:240px}}
+.pack svg{width:100%;height:auto;display:block}
+.pack-text{display:flex;flex-direction:column;gap:8px;min-width:0}
+.pack-title{font:400 1.8rem/1.1 var(--display)}
+.pack-text p{max-width:52ch}
+.pack-price{font:500 .95rem var(--mono);font-variant-numeric:tabular-nums}
+.pack-side{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.pack .price-mid{font-size:2rem}
+
+.faq{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:clamp(28px,5vw,64px);align-items:start}
+@media (max-width:860px){.faq{grid-template-columns:minmax(0,1fr)}}
+.faq-intro{display:flex;flex-direction:column;gap:14px}
+.faq-intro .eyebrow{color:var(--leaf)}
+.faq-intro p{color:var(--muted)}
+details{border-top:2px solid var(--ink);padding-block:18px}
+details:last-child{border-bottom:2px solid var(--ink)}
+summary{cursor:pointer;font:600 1.12rem/1.3 var(--body);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:500 1.4rem/1 var(--mono);flex:none}
+details[open] summary::after{content:"−"}
+details p{margin-top:10px;color:var(--muted);max-width:62ch}
+
+.news{border-radius:28px;border:2px solid #1D2518;padding:clamp(24px,4vw,44px)}
+.news-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px 36px;align-items:center}
+@media (max-width:820px){.news-grid{grid-template-columns:minmax(0,1fr)}}
+.news-copy{display:flex;flex-direction:column;gap:12px}
+.news-copy p{color:var(--muted);max-width:48ch}
+.news-form{display:flex;flex-wrap:wrap;gap:12px}
+.news-form input{flex:1 1 220px;min-width:0;border:2.5px solid #1D2518;border-radius:999px;padding:14px 20px;font:500 1rem var(--body);background:#FAFBEF;color:#1D2518}
+.news-form input::placeholder{color:#7D8570}
+.news-msg{flex-basis:100%;font:500 .85rem/1.4 var(--mono)}
+.news-cta{display:flex}
+a[data-wa][href],a[data-email][href]{text-decoration:underline;text-underline-offset:3px}
+.fields{display:grid;gap:6px}
+.fields label{font:500 .72rem/1.2 var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:4px}
+.fields input{border:2px solid var(--ink);border-radius:12px;padding:10px 14px;font:500 1rem var(--body);background:var(--paper);color:var(--ink);min-width:0;width:100%}
+.btn[aria-disabled="true"]{opacity:.5;pointer-events:none;box-shadow:none}
+.note.warn{color:var(--ink);background:var(--paper);border-radius:10px;padding:10px 12px}
+
+footer{background:var(--foot-bg);color:var(--foot-ink);padding-block:52px 40px;margin-top:clamp(56px,8vw,100px)}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:32px}
+@media (max-width:720px){.foot-grid{grid-template-columns:minmax(0,1fr)}}
+footer .logo{color:var(--foot-ink)}
+.foot-about{display:flex;flex-direction:column;gap:14px}
+footer p,footer li{color:var(--foot-muted)}
+footer h4{font:500 .76rem/1 var(--mono);text-transform:uppercase;letter-spacing:.14em;margin:0 0 14px;color:var(--foot-ink)}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline}
+.foot-base{margin-top:40px;padding-top:20px;border-top:1px solid rgba(236,239,214,.18);font:400 .8rem var(--mono);color:var(--foot-muted)}
+
+/* Carro */
+.scrim{position:fixed;inset:0;background:rgba(18,23,15,.55);z-index:40}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--surface);color:var(--ink);z-index:50;display:flex;flex-direction:column;border-left:2px solid var(--ink);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);transform:translateX(100%);visibility:hidden;transition:transform .35s cubic-bezier(.2,.85,.25,1),visibility 0s linear .35s}
+.drawer.open{transform:none;visibility:visible;transition:transform .35s cubic-bezier(.2,.85,.25,1),visibility 0s}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:2px solid var(--ink)}
+.drawer-head h2{font-size:1.8rem}
+.icon-btn{width:40px;height:40px;border-radius:50%;border:2px solid var(--ink);background:transparent;color:var(--ink);font:500 1.3rem/1 var(--mono);cursor:pointer}
+.items{flex:1;overflow:auto;padding:4px 20px}
+.empty{padding-block:28px;color:var(--muted);display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.item{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:14px;align-items:center;padding-block:16px;border-bottom:1px solid var(--line)}
+.item-sw{width:52px;height:52px;border-radius:50% 50% 46% 46% / 58% 58% 42% 42%;border:2px solid #1D2518}
+.item-info{display:flex;flex-direction:column;gap:6px;min-width:0}
+.item-name{font-weight:600}
+.item-meta{font:400 .8rem var(--mono);color:var(--muted)}
+.item-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.item-price{font:500 .95rem var(--mono);font-variant-numeric:tabular-nums}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--ink);border-radius:999px;width:max-content}
+.qty button{width:30px;height:30px;border:0;background:none;color:var(--ink);font:500 1rem var(--mono);cursor:pointer;border-radius:50%}
+.qty span{min-width:22px;text-align:center;font:500 .9rem var(--mono)}
+.remove{background:none;border:0;color:var(--muted);text-decoration:underline;font:400 .8rem var(--body);cursor:pointer;padding:0}
+.totals{padding:18px 20px;border-top:2px solid var(--ink);display:flex;flex-direction:column;gap:14px}
+.totals dl{display:grid;grid-template-columns:1fr auto;gap:6px 12px;margin:0}
+.totals dt{color:var(--muted)}
+.totals dd{margin:0;text-align:right;font:500 .95rem var(--mono);font-variant-numeric:tabular-nums}
+.totals dt.grand{color:var(--ink);font-weight:700;font-size:1.1rem;padding-top:6px}
+.totals dd.grand{font-size:1.1rem;padding-top:6px}
+.ship-hint{font:500 .8rem/1.4 var(--mono);background:var(--paper);border-radius:10px;padding:10px 12px}
+.totals .btn{width:100%}
+.note{font:400 .8rem/1.4 var(--mono);color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+<script>window.PALCUESCO_CONFIG=/*CONFIG*/{}/*END*/;</script>
+</head>
+<body>
+<!-- Símbolos compartidos: palta entera y palta partida -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="flesh" cx=".5" cy=".66" r=".62">
+      <stop offset="0" stop-color="#F6F5BC"/>
+      <stop offset=".5" stop-color="#E3EA8C"/>
+      <stop offset=".82" stop-color="#B8D366"/>
+      <stop offset="1" stop-color="#86AE44"/>
+    </radialGradient>
+    <pattern id="bumps" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.6" fill="#000" fill-opacity=".22"/>
+      <circle cx="9" cy="9" r="1.3" fill="#fff" fill-opacity=".13"/>
+      <circle cx="9.5" cy="3" r="1" fill="#000" fill-opacity=".12"/>
+    </pattern>
+    <symbol id="av-whole" viewBox="0 0 200 260">
+      <path d="M100 14C76 14 64 38 61 74C58 104 26 132 24 180C22 226 58 252 100 252C142 252 178 226 176 180C174 132 142 104 139 74C136 38 124 14 100 14Z" style="fill:var(--skin,#2E2329)"/>
+      <path d="M100 14C76 14 64 38 61 74C58 104 26 132 24 180C22 226 58 252 100 252C142 252 178 226 176 180C174 132 142 104 139 74C136 38 124 14 100 14Z" fill="url(#bumps)" style="opacity:var(--bumps,1)"/>
+      <path d="M74 66C69 98 52 122 46 158" fill="none" stroke="#fff" stroke-opacity=".22" stroke-width="9" stroke-linecap="round"/>
+      <path d="M100 14C76 14 64 38 61 74C58 104 26 132 24 180C22 226 58 252 100 252C142 252 178 226 176 180C174 132 142 104 139 74C136 38 124 14 100 14Z" fill="none" stroke="#1D2518" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M100 15C100 8 104 4 111 2" fill="none" stroke="#6B4A2E" stroke-width="6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="av-half" viewBox="0 0 200 260">
+      <path d="M100 14C76 14 64 38 61 74C58 104 26 132 24 180C22 226 58 252 100 252C142 252 178 226 176 180C174 132 142 104 139 74C136 38 124 14 100 14Z" style="fill:var(--skin,#2E2329)"/>
+      <path d="M100 14C76 14 64 38 61 74C58 104 26 132 24 180C22 226 58 252 100 252C142 252 178 226 176 180C174 132 142 104 139 74C136 38 124 14 100 14Z" transform="translate(12 16) scale(.88)" fill="url(#flesh)"/>
+      <circle cx="100" cy="176" r="40" fill="#8A5634"/>
+      <ellipse cx="87" cy="161" rx="13" ry="8" fill="#B98556" transform="rotate(-32 87 161)"/>
+      <circle cx="100" cy="176" r="40" fill="none" stroke="#1D2518" stroke-width="4"/>
+      <path d="M100 14C76 14 64 38 61 74C58 104 26 132 24 180C22 226 58 252 100 252C142 252 178 226 176 180C174 132 142 104 139 74C136 38 124 14 100 14Z" fill="none" stroke="#1D2518" stroke-width="5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="leaf" viewBox="0 0 120 60">
+      <path d="M4 40C30 6 86 2 116 18C92 50 40 60 4 40Z" fill="#5B8A33" stroke="#1D2518" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M8 39C44 30 80 22 112 19" fill="none" stroke="#1D2518" stroke-width="2.5" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="promo" aria-label="Promociones">
+  <div class="promo-track" aria-hidden="true">
+    <span>Pide antes de las 13:00 y te llega hoy</span><span>Despacho de lunes a domingo, solo en Santiago</span><span>Despacho gratis sobre $20.000</span><span>Palta Hass chilena, elegida a mano</span><span>Paga con Mercado Pago o transferencia</span>
+    <span>Pide antes de las 13:00 y te llega hoy</span><span>Despacho de lunes a domingo, solo en Santiago</span><span>Despacho gratis sobre $20.000</span><span>Palta Hass chilena, elegida a mano</span><span>Paga con Mercado Pago o transferencia</span>
+  </div>
+  <p style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Pide antes de las 13:00 y te llega hoy. Despacho de lunes a domingo, solo en Santiago. Despacho gratis sobre $20.000.</p>
+</div>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="logo" href="#top" aria-label="Palcuesco, inicio"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-10.0 -965.4 5736.8 1172.9"><g transform="translate(0 -955.4) scale(4.4341)"><path d="M100 14C76 14 64 38 61 74C58 104 26 132 24 180C22 226 58 252 100 252C142 252 178 226 176 180C174 132 142 104 139 74C136 38 124 14 100 14Z" fill="#2E2329" stroke="currentColor" stroke-width="10" stroke-linejoin="round"/><path d="M100 14C76 14 64 38 61 74C58 104 26 132 24 180C22 226 58 252 100 252C142 252 178 226 176 180C174 132 142 104 139 74C136 38 124 14 100 14Z" transform="translate(16 22) scale(.84)" fill="#9DC157"/><path d="M100 14C76 14 64 38 61 74C58 104 26 132 24 180C22 226 58 252 100 252C142 252 178 226 176 180C174 132 142 104 139 74C136 38 124 14 100 14Z" transform="translate(31 44) scale(.69)" fill="#D8E27C"/><circle cx="100" cy="176" r="40" fill="#8A5634"/><ellipse cx="86" cy="160" rx="13" ry="8" fill="#B98556" transform="rotate(-32 86 160)"/></g><g transform="translate(1094.8 0)"><path d="M239 -231V-106Q239 -54 211.5 -27.0Q184 0 139 0H138Q89 0 60.5 -27.0Q32 -54 32 -106V-247Q32 -353 64.0 -408.0Q96 -463 145 -487L140 -506H123Q77 -506 50.5 -535.5Q24 -565 23 -616Q22 -666 49.5 -697.0Q77 -728 123 -728H386Q487 -728 550.5 -667.5Q614 -607 614 -477Q614 -383 581.0 -329.0Q548 -275 494.0 -253.0Q440 -231 377 -231ZM226 -424Q226 -402 234.5 -395.0Q243 -388 265 -388H358Q400 -388 419.0 -407.5Q438 -427 438 -463Q438 -499 419.0 -518.0Q400 -537 358 -537H265Q243 -537 234.5 -531.0Q226 -525 226 -502Z M774 0Q700 0 658.5 -40.0Q617 -80 617 -152Q617 -224 665.0 -256.5Q713 -289 788 -289Q832 -289 868.0 -283.0Q904 -277 933 -266H936V-281Q936 -304 919.0 -317.5Q902 -331 876 -330Q851 -330 833.5 -327.0Q816 -324 790 -317Q742 -305 707.0 -319.0Q672 -333 659 -374Q647 -417 664.5 -446.0Q682 -475 718 -491Q749 -506 787.5 -516.0Q826 -526 871 -526Q1002 -526 1063.5 -462.5Q1125 -399 1125 -250V-95Q1125 -54 1100.0 -27.0Q1075 0 1031 0Q983 0 959.5 -27.0Q936 -54 936 -93V-116H916Q916 -90 906.5 -63.0Q897 -36 867.5 -18.0Q838 0 774 0ZM784 -219Q784 -202 796.5 -195.0Q809 -188 851 -188Q889 -188 904.0 -195.0Q919 -202 919 -219Q919 -235 904.0 -241.5Q889 -248 851 -248Q809 -248 796.5 -241.5Q784 -235 784 -219Z M1281 0Q1232 0 1207.5 -26.0Q1183 -52 1183 -91V-671Q1183 -714 1207.5 -742.5Q1232 -771 1281 -771Q1325 -771 1349.0 -742.5Q1373 -714 1373 -673V-91Q1373 -52 1349.0 -26.0Q1325 0 1281 0Z M1690 3Q1612 3 1552.0 -29.5Q1492 -62 1458.0 -122.0Q1424 -182 1424 -263Q1424 -344 1458.0 -404.0Q1492 -464 1552.5 -497.0Q1613 -530 1692 -530Q1754 -530 1801.5 -517.0Q1849 -504 1876.5 -478.0Q1904 -452 1904 -413Q1904 -366 1880.0 -339.5Q1856 -313 1811 -313Q1781 -313 1751.5 -322.0Q1722 -331 1676 -331Q1638 -331 1612.0 -319.0Q1586 -307 1586 -275Q1586 -242 1612.0 -227.5Q1638 -213 1676 -213Q1707 -213 1728.0 -219.0Q1749 -225 1768.0 -231.0Q1787 -237 1811 -237Q1862 -237 1886.5 -207.5Q1911 -178 1911 -132Q1911 -93 1882.0 -62.5Q1853 -32 1803.0 -14.5Q1753 3 1690 3Z M2121 0Q2051 0 2007.0 -53.0Q1963 -106 1962 -202L1961 -433Q1961 -476 1987.5 -500.5Q2014 -525 2060 -525Q2104 -525 2131.0 -500.5Q2158 -476 2158 -433V-224Q2158 -149 2217 -149Q2246 -149 2256.0 -170.5Q2266 -192 2266 -226V-433Q2266 -472 2293.0 -498.5Q2320 -525 2363 -525Q2408 -525 2432.5 -498.5Q2457 -472 2457 -433V-105Q2457 -57 2435.5 -28.5Q2414 0 2366 0Q2319 0 2292.5 -28.5Q2266 -57 2266 -105V-122H2248Q2248 -64 2213.5 -32.0Q2179 0 2121 0Z M2515 -260Q2515 -339 2546.5 -399.0Q2578 -459 2636.5 -493.0Q2695 -527 2776 -527Q2839 -527 2889.5 -504.0Q2940 -481 2969.0 -442.5Q2998 -404 2998 -358Q2998 -310 2970.0 -290.0Q2942 -270 2887 -270H2677Q2677 -244 2697.5 -227.0Q2718 -210 2767 -210Q2792 -210 2813.5 -215.0Q2835 -220 2857.5 -224.5Q2880 -229 2908 -229Q2948 -229 2974.0 -200.5Q3000 -172 3000 -122Q3000 -63 2939.5 -30.0Q2879 3 2781 3Q2712 3 2651.5 -24.0Q2591 -51 2553.0 -109.5Q2515 -168 2515 -260ZM2839 -303Q2854 -303 2849 -317Q2845 -331 2825.0 -346.0Q2805 -361 2767 -361Q2723 -361 2701.5 -342.0Q2680 -323 2680 -303Z M3307 13Q3238 13 3179.5 -0.5Q3121 -14 3086.0 -43.5Q3051 -73 3051 -122Q3051 -165 3077.0 -193.0Q3103 -221 3146 -221Q3173 -221 3200.5 -212.5Q3228 -204 3259.0 -196.0Q3290 -188 3326 -188Q3358 -188 3369.0 -191.5Q3380 -195 3380 -205Q3380 -217 3366.5 -221.0Q3353 -225 3321 -231L3249 -245Q3204 -254 3161.5 -268.5Q3119 -283 3091.5 -312.0Q3064 -341 3064 -391Q3064 -459 3124.5 -497.0Q3185 -535 3300 -535Q3366 -535 3418.5 -522.0Q3471 -509 3502.0 -483.5Q3533 -458 3533 -420Q3534 -379 3511.0 -354.0Q3488 -329 3453 -329Q3428 -329 3402.5 -335.5Q3377 -342 3347.5 -349.5Q3318 -357 3280 -358Q3253 -360 3236.0 -355.0Q3219 -350 3219 -339Q3219 -327 3239.0 -322.5Q3259 -318 3299 -311L3370 -298Q3435 -287 3473.5 -270.5Q3512 -254 3529.0 -225.0Q3546 -196 3546 -145Q3546 -92 3515.5 -56.5Q3485 -21 3431.0 -4.0Q3377 13 3307 13Z M3852 3Q3774 3 3714.0 -29.5Q3654 -62 3620.0 -122.0Q3586 -182 3586 -263Q3586 -344 3620.0 -404.0Q3654 -464 3714.5 -497.0Q3775 -530 3854 -530Q3916 -530 3963.5 -517.0Q4011 -504 4038.5 -478.0Q4066 -452 4066 -413Q4066 -366 4042.0 -339.5Q4018 -313 3973 -313Q3943 -313 3913.5 -322.0Q3884 -331 3838 -331Q3800 -331 3774.0 -319.0Q3748 -307 3748 -275Q3748 -242 3774.0 -227.5Q3800 -213 3838 -213Q3869 -213 3890.0 -219.0Q3911 -225 3930.0 -231.0Q3949 -237 3973 -237Q4024 -237 4048.5 -207.5Q4073 -178 4073 -132Q4073 -93 4044.0 -62.5Q4015 -32 3965.0 -14.5Q3915 3 3852 3Z" fill="currentColor"/><circle cx="4365.5" cy="-262.5" r="230.8" fill="#8A5634"/><ellipse cx="4289.3" cy="-345.6" rx="73.9" ry="46.2" fill="#B98556" transform="rotate(-32 4289.3 -345.6)"/></g></svg></a>
+    <nav class="main" aria-label="Principal">
+      <a href="#paltas">Paltas</a>
+      <a href="#como">Cómo funciona</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <button class="cart-btn" id="open-cart" type="button" aria-haspopup="dialog">Pedido <span class="cart-count" id="cart-count">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow" style="color:var(--leaf)">Palta Hass chilena · Despacho en Santiago</span>
+        <h1>Paltas <em>en su punto</em>, justo cuando las quieres</h1>
+        <p class="lead">Elige cuándo te las vas a comer y te las mandamos con esa madurez. Nada de paltas duras como piedra ni pasadas.</p>
+        <div class="price-row">
+          <span class="price-big">$4.990</span><span class="per">el kilo</span>
+          <span class="off">Caja de 3 kg a $13.490</span>
+        </div>
+        <p class="cutoff" id="cutoff" aria-live="polite"><i aria-hidden="true"></i><span id="cutoff-text">Pide antes de las 13:00 y te llega hoy</span></p>
+        <div class="cta-row">
+          <button class="btn btn-primary" id="hero-add" type="button">Agregar 1 kg a mi pedido</button>
+          <a class="btn btn-ghost" href="#paltas">Ver cajas y formatos</a>
+        </div>
+        <ul class="trust">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>Despacho de lunes a domingo</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>Si llega mala, te la reponemos</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg>Mercado Pago o transferencia</li>
+        </ul>
+      </div>
+
+      <div class="stage" id="stage" data-ripe="hoy">
+        <div class="stage-panel on-flesh">
+          <svg viewBox="0 0 520 430" role="img" aria-label="Una palta Hass entera y otra partida, junto a un letrero de cartón que dice Hass a 4.990 pesos el kilo">
+            <ellipse cx="260" cy="398" rx="215" ry="18" fill="#1D2518" fill-opacity=".13"/>
+            <use href="#leaf" x="20" y="40" width="150" height="75" transform="rotate(-18 95 78)"/>
+            <use href="#av-whole" x="42" y="68" width="250" height="325" transform="rotate(-9 167 230)"/>
+            <use href="#av-half" x="250" y="146" width="200" height="260" transform="rotate(14 350 276)"/>
+            <g transform="rotate(5 405 86)">
+              <rect x="318" y="30" width="178" height="114" rx="6" fill="#CFAE7C" stroke="#1D2518" stroke-width="3"/>
+              <path d="M330 52H484M330 124H484" stroke="#B89363" stroke-width="2"/>
+              <rect x="386" y="20" width="46" height="18" fill="#F4F0D6" fill-opacity=".9" transform="rotate(-5 409 29)"/>
+              <text x="407" y="76" text-anchor="middle" class="mk" font-size="26">HASS</text>
+              <text x="398" y="120" text-anchor="middle" class="mk" font-size="34">$4.990<tspan font-size="18" dx="4">kg</tspan></text>
+            </g>
+          </svg>
+        </div>
+        <div class="stage-controls">
+          <span class="eyebrow">¿Cuándo te las comes?</span>
+          <div class="seg" role="group" aria-label="Madurez">
+            <button type="button" data-ripe="hoy" aria-pressed="true">Hoy</button>
+            <button type="button" data-ripe="dias" aria-pressed="false">En 2–3 días</button>
+            <button type="button" data-ripe="semana" aria-pressed="false">En la semana</button>
+          </div>
+        </div>
+        <div class="ripe-info">
+          <div class="firm"><span>Firmeza</span><span class="pips" id="pips" role="img" aria-label="Firmeza: blanda"><i class="pip on"></i><i class="pip"></i><i class="pip"></i></span></div>
+          <p class="ripe-text" id="ripe-text" aria-live="polite">Piel casi negra y cede apenas al apretarla con la palma. Lista para la once.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="como" style="padding-top:clamp(24px,4vw,48px)">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Cómo funciona</span>
+        <h2>Pide antes de las 13:00 y te llega hoy</h2>
+        <p>Despachamos de lunes a domingo, solo en Santiago. Si pides después de las 13:00, te llega al día siguiente.</p>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="ico" style="--tint:#D8E27C"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10 18h4"/></svg></span>
+          <span class="eyebrow">Antes de las 13:00</span>
+          <h3>Haces tu pedido</h3>
+          <p>Eliges tus paltas y la madurez, y nos mandas el pedido por WhatsApp. Pagas con Mercado Pago o transferencia.</p>
+        </li>
+        <li class="step">
+          <span class="ico" style="--tint:#E6D6B8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M7 20h10M5 7h14"/><path d="M5 7l-3 6h6zM19 7l-3 6h6z"/></svg></span>
+          <span class="eyebrow">A las 13:00</span>
+          <h3>Las elegimos una por una</h3>
+          <p>Separamos a mano por tamaño y por madurez, según lo que marcaste: para hoy, en 2 a 3 días o para la semana.</p>
+        </li>
+        <li class="step">
+          <span class="ico" style="--tint:#CFE0B8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h11v10H2z"/><path d="M13 10h5l3 3v3h-8z"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></span>
+          <span class="eyebrow">En la tarde</span>
+          <h3>Sale tu despacho</h3>
+          <p>Te avisamos por WhatsApp cuando vamos en camino a tu casa.</p>
+        </li>
+        <li class="step">
+          <span class="ico" style="--tint:#EFC9A4"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10M10 20v-6h4v6"/></svg></span>
+          <span class="eyebrow">El mismo día</span>
+          <h3>Te llegan en su punto</h3>
+          <p>Firmes, sin golpes y con la madurez que elegiste. Todos los días de la semana, domingo incluido.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="paltas" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Paltas y cajas</span>
+        <h2>Elige formato y madurez</h2>
+        <p>Precios finales. El despacho se suma al final y es gratis sobre $20.000.</p>
+      </div>
+
+      <div class="products">
+        <article class="product" data-id="hass-1" data-darkens="1">
+          <div class="product-art" style="--art:#DCE39B">
+            <svg viewBox="0 0 400 300" role="img" aria-label="Tres paltas Hass, una partida">
+              <use href="#av-whole" x="60" y="48" width="140" height="182" transform="rotate(-14 130 139)"/>
+              <use href="#av-whole" x="200" y="44" width="140" height="182" transform="rotate(12 270 135)"/>
+              <use href="#av-half" x="128" y="72" width="150" height="195" transform="rotate(-3 203 170)"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <div><h3>Palta Hass Primera</h3><p>Bolsa de 1 kg</p></div>
+              <div class="price-col"><span class="price-mid">$4.990</span><span class="kilo">$4.990 el kg</span></div>
+            </div>
+            <dl class="specs">
+              <dt>Calibre</dt><dd>Primera, desde 180 g</dd>
+              <dt>Rinde</dt><dd>4 a 5 paltas</dd>
+              <dt>Ideal para</dt><dd>Pan con palta, ensaladas y paltas rellenas</dd>
+            </dl>
+            <fieldset class="ripe-pick">
+              <legend>Madurez</legend>
+              <input type="radio" name="r-hass-1" id="r-hass-1-hoy" value="hoy" checked><label for="r-hass-1-hoy"><i style="--dot:#2E2329"></i>Para hoy</label>
+              <input type="radio" name="r-hass-1" id="r-hass-1-dias" value="dias"><label for="r-hass-1-dias"><i style="--dot:#414B27"></i>En 2–3 días</label>
+              <input type="radio" name="r-hass-1" id="r-hass-1-semana" value="semana"><label for="r-hass-1-semana"><i style="--dot:#5A8530"></i>En la semana</label>
+            </fieldset>
+            <button class="btn btn-primary add" type="button">Agregar al pedido</button>
+          </div>
+        </article>
+
+        <article class="product" data-id="hass-3" data-darkens="1">
+          <div class="product-art" style="--art:#E6D6B8">
+            <svg viewBox="0 0 400 300" role="img" aria-label="Cajón de cartón con paltas Hass">
+              <use href="#av-whole" x="68" y="58" width="112" height="146" transform="rotate(-12 124 131)"/>
+              <use href="#av-whole" x="146" y="44" width="112" height="146" transform="rotate(5 202 117)"/>
+              <use href="#av-whole" x="222" y="60" width="112" height="146" transform="rotate(16 278 133)"/>
+              <rect x="55" y="150" width="290" height="114" rx="6" fill="#C9A06A" stroke="#1D2518" stroke-width="3.5"/>
+              <path d="M58 188H342M58 226H342" stroke="#A9824F" stroke-width="3"/>
+              <text x="200" y="221" text-anchor="middle" class="mk" font-size="32">3 KG</text>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <div><h3>Palta Hass Primera</h3><p>Caja de 3 kg</p></div>
+              <div class="price-col"><span class="price-mid">$13.490</span><span class="kilo">$4.497 el kg</span></div>
+            </div>
+            <dl class="specs">
+              <dt>Calibre</dt><dd>Primera, desde 180 g</dd>
+              <dt>Rinde</dt><dd>13 a 16 paltas</dd>
+              <dt>Ideal para</dt><dd>Familias y el completo del domingo</dd>
+            </dl>
+            <fieldset class="ripe-pick">
+              <legend>Madurez</legend>
+              <input type="radio" name="r-hass-3" id="r-hass-3-hoy" value="hoy" checked><label for="r-hass-3-hoy"><i style="--dot:#2E2329"></i>Para hoy</label>
+              <input type="radio" name="r-hass-3" id="r-hass-3-dias" value="dias"><label for="r-hass-3-dias"><i style="--dot:#414B27"></i>En 2–3 días</label>
+              <input type="radio" name="r-hass-3" id="r-hass-3-semana" value="semana"><label for="r-hass-3-semana"><i style="--dot:#5A8530"></i>En la semana</label>
+            </fieldset>
+            <button class="btn btn-primary add" type="button">Agregar al pedido</button>
+          </div>
+        </article>
+
+        <article class="product" data-id="surt-1" data-darkens="1">
+          <div class="product-art" style="--art:#CFE0B8">
+            <svg viewBox="0 0 400 300" role="img" aria-label="Paltas Hass de distintos tamaños, una partida">
+              <use href="#av-whole" x="46" y="92" width="100" height="130" transform="rotate(-16 96 157)"/>
+              <use href="#av-whole" x="130" y="54" width="124" height="161" transform="rotate(-4 192 134)"/>
+              <use href="#av-whole" x="252" y="96" width="92" height="120" transform="rotate(14 298 156)"/>
+              <use href="#av-half" x="172" y="150" width="96" height="125" transform="rotate(8 220 212)"/>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <div><h3>Palta Hass Surtida</h3><p>Bolsa de 1 kg</p></div>
+              <div class="price-col"><span class="price-mid">$3.490</span><span class="kilo">$3.490 el kg</span></div>
+            </div>
+            <dl class="specs">
+              <dt>Calibre</dt><dd>Surtida, desde 120 g</dd>
+              <dt>Rinde</dt><dd>5 a 8 paltas</dd>
+              <dt>Ideal para</dt><dd>Guacamole, pan con palta y completos</dd>
+            </dl>
+            <fieldset class="ripe-pick">
+              <legend>Madurez</legend>
+              <input type="radio" name="r-surt-1" id="r-surt-1-hoy" value="hoy" checked><label for="r-surt-1-hoy"><i style="--dot:#2E2329"></i>Para hoy</label>
+              <input type="radio" name="r-surt-1" id="r-surt-1-dias" value="dias"><label for="r-surt-1-dias"><i style="--dot:#414B27"></i>En 2–3 días</label>
+              <input type="radio" name="r-surt-1" id="r-surt-1-semana" value="semana"><label for="r-surt-1-semana"><i style="--dot:#5A8530"></i>En la semana</label>
+            </fieldset>
+            <button class="btn btn-primary add" type="button">Agregar al pedido</button>
+          </div>
+        </article>
+
+        <article class="product" data-id="surt-3" data-darkens="1">
+          <div class="product-art" style="--art:#E9E6C6">
+            <svg viewBox="0 0 400 300" role="img" aria-label="Cajón de cartón con paltas Hass de distintos tamaños">
+              <use href="#av-whole" x="60" y="78" width="86" height="112" transform="rotate(-14 103 134)"/>
+              <use href="#av-whole" x="126" y="58" width="92" height="120" transform="rotate(-2 172 118)"/>
+              <use href="#av-whole" x="198" y="76" width="80" height="104" transform="rotate(10 238 128)"/>
+              <use href="#av-whole" x="258" y="62" width="92" height="120" transform="rotate(18 304 122)"/>
+              <rect x="55" y="150" width="290" height="114" rx="6" fill="#C9A06A" stroke="#1D2518" stroke-width="3.5"/>
+              <path d="M58 188H342M58 226H342" stroke="#A9824F" stroke-width="3"/>
+              <text x="200" y="221" text-anchor="middle" class="mk" font-size="32">3 KG</text>
+            </svg>
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <div><h3>Palta Hass Surtida</h3><p>Caja de 3 kg</p></div>
+              <div class="price-col"><span class="price-mid">$9.490</span><span class="kilo">$3.163 el kg</span></div>
+            </div>
+            <dl class="specs">
+              <dt>Calibre</dt><dd>Surtida, desde 120 g</dd>
+              <dt>Rinde</dt><dd>16 a 24 paltas</dd>
+              <dt>Ideal para</dt><dd>Familias grandes y sangucherías</dd>
+            </dl>
+            <fieldset class="ripe-pick">
+              <legend>Madurez</legend>
+              <input type="radio" name="r-surt-3" id="r-surt-3-hoy" value="hoy" checked><label for="r-surt-3-hoy"><i style="--dot:#2E2329"></i>Para hoy</label>
+              <input type="radio" name="r-surt-3" id="r-surt-3-dias" value="dias"><label for="r-surt-3-dias"><i style="--dot:#414B27"></i>En 2–3 días</label>
+              <input type="radio" name="r-surt-3" id="r-surt-3-semana" value="semana"><label for="r-surt-3-semana"><i style="--dot:#5A8530"></i>En la semana</label>
+            </fieldset>
+            <button class="btn btn-primary add" type="button">Agregar al pedido</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="pack on-flesh">
+        <svg viewBox="0 0 240 170" role="img" aria-label="Tres paltas de distinta madurez: para hoy, en 3 días y en 6 días">
+          <use href="#av-whole" x="10" y="14" width="76" height="99" style="--skin:#2E2329"/>
+          <use href="#av-whole" x="82" y="10" width="76" height="99" style="--skin:#414B27"/>
+          <use href="#av-whole" x="154" y="14" width="76" height="99" style="--skin:#5A8530"/>
+          <text x="48" y="140" text-anchor="middle" class="mk" font-size="17">hoy</text>
+          <text x="120" y="140" text-anchor="middle" class="mk" font-size="17">+3 días</text>
+          <text x="192" y="140" text-anchor="middle" class="mk" font-size="17">+6 días</text>
+          <path d="M20 154H220" stroke="#1D2518" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <div class="pack-text">
+          <span class="eyebrow">La más pedida</span>
+          <span class="pack-title">Caja escalonada de 5 kg</span>
+          <p>Cinco kilos de palta primera: un tercio para hoy, un tercio lista en 3 días y un tercio para el fin de semana. Nunca más se te maduran todas juntas.</p>
+        </div>
+        <div class="pack-side">
+          <span class="price-mid">$21.990</span>
+          <span class="pack-price">$4.398 el kg · despacho gratis</span>
+          <button class="btn btn-primary" id="pack-add" type="button">Agregar la caja</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Para calcular</span>
+        <h2>¿Cuánto rinde un kilo?</h2>
+        <p>Para que no te quedes corto el fin de semana.</p>
+      </div>
+      <div class="eq" role="img" aria-label="1 kilo de Hass son 4 a 5 paltas, que alcanzan para unos 10 panes con palta">
+        <span class="chip">1 kg de Hass</span><span class="op">=</span><span class="chip">4 a 5 paltas</span><span class="op">≈</span><span class="chip total">10 panes con palta</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="preguntas">
+    <div class="wrap faq">
+      <div class="faq-intro">
+        <span class="eyebrow">Antes de pedir</span>
+        <h2>Preguntas frecuentes</h2>
+        <p>¿Tienes otra duda? <a data-wa data-wa-label="Escríbenos por WhatsApp al ">Escríbenos por WhatsApp</a> y te respondemos el mismo día.</p>
+      </div>
+      <div>
+        <details open>
+          <summary>¿Cómo sé si mi palta está lista?</summary>
+          <p>Apriétala suave con la palma de la mano, no con los dedos. Si cede un poco, está lista. Otro truco: saca el cabito de arriba. Si debajo está verde, está en su punto; si está café, ya se pasó.</p>
+        </details>
+        <details>
+          <summary>¿Cómo las guardo?</summary>
+          <p>Fuera del refri hasta que maduren. Cuando ya estén listas, al refri, donde aguantan hasta 3 días más. Si quieres apurarlas, déjalas en una bolsa de papel con un plátano.</p>
+        </details>
+        <details>
+          <summary>¿Dónde despachan?</summary>
+          <p>Solo en Santiago, de lunes a domingo. Por ahora no hacemos envíos a regiones. Si pides antes de las 13:00, te llega el mismo día; después de esa hora, al día siguiente. El despacho cuesta $2.990 y es gratis sobre $20.000. Si no sabes si llegamos a tu comuna, escríbenos por WhatsApp antes de pedir.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa si me llega una palta mala?</summary>
+          <p>Mándanos una foto por WhatsApp el mismo día y te la reponemos en el siguiente despacho, o te devolvemos lo que pagaste por ella.</p>
+        </details>
+        <details>
+          <summary>¿Cómo pago?</summary>
+          <p>Nos mandas tu pedido por WhatsApp desde esta página y te respondemos con la confirmación y un link de pago de Mercado Pago (débito o crédito) o los datos para transferencia.</p>
+        </details>
+        <details>
+          <summary>¿Venden por mayor?</summary>
+          <p>Sí, a restaurantes, sangucherías y almacenes desde 20 kg a la semana. Escríbenos y te mandamos la lista de precios mayoristas.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" aria-labelledby="news-title">
+    <div class="news on-flesh">
+      <div class="news-grid">
+        <div class="news-copy">
+          <span class="eyebrow">Síguenos</span>
+          <h2 id="news-title">Ofertas y recetas cada semana</h2>
+          <p>En Instagram publicamos las ofertas por caja, los calibres que llegaron y recetas con palta.</p>
+        </div>
+        <div class="news-cta"><a class="btn btn-primary" data-ig href="https://www.instagram.com/palcuesco/" target="_blank" rel="noopener">Seguir a @palcuesco</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a class="logo" href="#top" aria-label="Palcuesco, inicio"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-10.0 -965.4 5736.8 1172.9"><g transform="translate(0 -955.4) scale(4.4341)"><path d="M100 14C76 14 64 38 61 74C58 104 26 132 24 180C22 226 58 252 100 252C142 252 178 226 176 180C174 132 142 104 139 74C136 38 124 14 100 14Z" fill="#2E2329" stroke="currentColor" stroke-width="10" stroke-linejoin="round"/><path d="M100 14C76 14 64 38 61 74C58 104 26 132 24 180C22 226 58 252 100 252C142 252 178 226 176 180C174 132 142 104 139 74C136 38 124 14 100 14Z" transform="translate(16 22) scale(.84)" fill="#9DC157"/><path d="M100 14C76 14 64 38 61 74C58 104 26 132 24 180C22 226 58 252 100 252C142 252 178 226 176 180C174 132 142 104 139 74C136 38 124 14 100 14Z" transform="translate(31 44) scale(.69)" fill="#D8E27C"/><circle cx="100" cy="176" r="40" fill="#8A5634"/><ellipse cx="86" cy="160" rx="13" ry="8" fill="#B98556" transform="rotate(-32 86 160)"/></g><g transform="translate(1094.8 0)"><path d="M239 -231V-106Q239 -54 211.5 -27.0Q184 0 139 0H138Q89 0 60.5 -27.0Q32 -54 32 -106V-247Q32 -353 64.0 -408.0Q96 -463 145 -487L140 -506H123Q77 -506 50.5 -535.5Q24 -565 23 -616Q22 -666 49.5 -697.0Q77 -728 123 -728H386Q487 -728 550.5 -667.5Q614 -607 614 -477Q614 -383 581.0 -329.0Q548 -275 494.0 -253.0Q440 -231 377 -231ZM226 -424Q226 -402 234.5 -395.0Q243 -388 265 -388H358Q400 -388 419.0 -407.5Q438 -427 438 -463Q438 -499 419.0 -518.0Q400 -537 358 -537H265Q243 -537 234.5 -531.0Q226 -525 226 -502Z M774 0Q700 0 658.5 -40.0Q617 -80 617 -152Q617 -224 665.0 -256.5Q713 -289 788 -289Q832 -289 868.0 -283.0Q904 -277 933 -266H936V-281Q936 -304 919.0 -317.5Q902 -331 876 -330Q851 -330 833.5 -327.0Q816 -324 790 -317Q742 -305 707.0 -319.0Q672 -333 659 -374Q647 -417 664.5 -446.0Q682 -475 718 -491Q749 -506 787.5 -516.0Q826 -526 871 -526Q1002 -526 1063.5 -462.5Q1125 -399 1125 -250V-95Q1125 -54 1100.0 -27.0Q1075 0 1031 0Q983 0 959.5 -27.0Q936 -54 936 -93V-116H916Q916 -90 906.5 -63.0Q897 -36 867.5 -18.0Q838 0 774 0ZM784 -219Q784 -202 796.5 -195.0Q809 -188 851 -188Q889 -188 904.0 -195.0Q919 -202 919 -219Q919 -235 904.0 -241.5Q889 -248 851 -248Q809 -248 796.5 -241.5Q784 -235 784 -219Z M1281 0Q1232 0 1207.5 -26.0Q1183 -52 1183 -91V-671Q1183 -714 1207.5 -742.5Q1232 -771 1281 -771Q1325 -771 1349.0 -742.5Q1373 -714 1373 -673V-91Q1373 -52 1349.0 -26.0Q1325 0 1281 0Z M1690 3Q1612 3 1552.0 -29.5Q1492 -62 1458.0 -122.0Q1424 -182 1424 -263Q1424 -344 1458.0 -404.0Q1492 -464 1552.5 -497.0Q1613 -530 1692 -530Q1754 -530 1801.5 -517.0Q1849 -504 1876.5 -478.0Q1904 -452 1904 -413Q1904 -366 1880.0 -339.5Q1856 -313 1811 -313Q1781 -313 1751.5 -322.0Q1722 -331 1676 -331Q1638 -331 1612.0 -319.0Q1586 -307 1586 -275Q1586 -242 1612.0 -227.5Q1638 -213 1676 -213Q1707 -213 1728.0 -219.0Q1749 -225 1768.0 -231.0Q1787 -237 1811 -237Q1862 -237 1886.5 -207.5Q1911 -178 1911 -132Q1911 -93 1882.0 -62.5Q1853 -32 1803.0 -14.5Q1753 3 1690 3Z M2121 0Q2051 0 2007.0 -53.0Q1963 -106 1962 -202L1961 -433Q1961 -476 1987.5 -500.5Q2014 -525 2060 -525Q2104 -525 2131.0 -500.5Q2158 -476 2158 -433V-224Q2158 -149 2217 -149Q2246 -149 2256.0 -170.5Q2266 -192 2266 -226V-433Q2266 -472 2293.0 -498.5Q2320 -525 2363 -525Q2408 -525 2432.5 -498.5Q2457 -472 2457 -433V-105Q2457 -57 2435.5 -28.5Q2414 0 2366 0Q2319 0 2292.5 -28.5Q2266 -57 2266 -105V-122H2248Q2248 -64 2213.5 -32.0Q2179 0 2121 0Z M2515 -260Q2515 -339 2546.5 -399.0Q2578 -459 2636.5 -493.0Q2695 -527 2776 -527Q2839 -527 2889.5 -504.0Q2940 -481 2969.0 -442.5Q2998 -404 2998 -358Q2998 -310 2970.0 -290.0Q2942 -270 2887 -270H2677Q2677 -244 2697.5 -227.0Q2718 -210 2767 -210Q2792 -210 2813.5 -215.0Q2835 -220 2857.5 -224.5Q2880 -229 2908 -229Q2948 -229 2974.0 -200.5Q3000 -172 3000 -122Q3000 -63 2939.5 -30.0Q2879 3 2781 3Q2712 3 2651.5 -24.0Q2591 -51 2553.0 -109.5Q2515 -168 2515 -260ZM2839 -303Q2854 -303 2849 -317Q2845 -331 2825.0 -346.0Q2805 -361 2767 -361Q2723 -361 2701.5 -342.0Q2680 -323 2680 -303Z M3307 13Q3238 13 3179.5 -0.5Q3121 -14 3086.0 -43.5Q3051 -73 3051 -122Q3051 -165 3077.0 -193.0Q3103 -221 3146 -221Q3173 -221 3200.5 -212.5Q3228 -204 3259.0 -196.0Q3290 -188 3326 -188Q3358 -188 3369.0 -191.5Q3380 -195 3380 -205Q3380 -217 3366.5 -221.0Q3353 -225 3321 -231L3249 -245Q3204 -254 3161.5 -268.5Q3119 -283 3091.5 -312.0Q3064 -341 3064 -391Q3064 -459 3124.5 -497.0Q3185 -535 3300 -535Q3366 -535 3418.5 -522.0Q3471 -509 3502.0 -483.5Q3533 -458 3533 -420Q3534 -379 3511.0 -354.0Q3488 -329 3453 -329Q3428 -329 3402.5 -335.5Q3377 -342 3347.5 -349.5Q3318 -357 3280 -358Q3253 -360 3236.0 -355.0Q3219 -350 3219 -339Q3219 -327 3239.0 -322.5Q3259 -318 3299 -311L3370 -298Q3435 -287 3473.5 -270.5Q3512 -254 3529.0 -225.0Q3546 -196 3546 -145Q3546 -92 3515.5 -56.5Q3485 -21 3431.0 -4.0Q3377 13 3307 13Z M3852 3Q3774 3 3714.0 -29.5Q3654 -62 3620.0 -122.0Q3586 -182 3586 -263Q3586 -344 3620.0 -404.0Q3654 -464 3714.5 -497.0Q3775 -530 3854 -530Q3916 -530 3963.5 -517.0Q4011 -504 4038.5 -478.0Q4066 -452 4066 -413Q4066 -366 4042.0 -339.5Q4018 -313 3973 -313Q3943 -313 3913.5 -322.0Q3884 -331 3838 -331Q3800 -331 3774.0 -319.0Q3748 -307 3748 -275Q3748 -242 3774.0 -227.5Q3800 -213 3838 -213Q3869 -213 3890.0 -219.0Q3911 -225 3930.0 -231.0Q3949 -237 3973 -237Q4024 -237 4048.5 -207.5Q4073 -178 4073 -132Q4073 -93 4044.0 -62.5Q4015 -32 3965.0 -14.5Q3915 3 3852 3Z" fill="currentColor"/><circle cx="4365.5" cy="-262.5" r="230.8" fill="#8A5634"/><ellipse cx="4289.3" cy="-345.6" rx="73.9" ry="46.2" fill="#B98556" transform="rotate(-32 4289.3 -345.6)"/></g></svg></a>
+        <p>Paltas elegidas una por una y despachadas en su punto, todos los días. El cuesco es lo único que no te comes.</p>
+      </div>
+      <div>
+        <h4>Tienda</h4>
+        <ul>
+          <li><a href="#paltas">Palta primera y surtida</a></li>
+          <li><a href="#paltas">Caja escalonada</a></li>
+          <li><a href="#preguntas">Venta por mayor</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li data-wa-row><a data-wa data-wa-label="WhatsApp ">WhatsApp</a></li>
+          <li data-email-row hidden><a data-email></a></li>
+          <li><a data-ig href="https://www.instagram.com/palcuesco/" target="_blank" rel="noopener">Instagram @palcuesco</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-base">© 2026 Palcuesco · Palta Hass con despacho el mismo día en Santiago</p>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+  <div class="drawer-head">
+    <h2 id="drawer-title">Tu pedido</h2>
+    <button class="icon-btn" id="close-cart" type="button" aria-label="Cerrar pedido">×</button>
+  </div>
+  <div class="items" id="items"></div>
+  <div class="totals" id="totals">
+    <dl>
+      <dt>Subtotal</dt><dd id="t-sub">$0</dd>
+      <dt>Despacho</dt><dd id="t-ship">$0</dd>
+      <dt class="grand">Total</dt><dd class="grand" id="t-total">$0</dd>
+    </dl>
+    <p class="ship-hint" id="ship-hint"></p>
+    <div class="fields">
+      <label for="f-name">Nombre</label>
+      <input id="f-name" autocomplete="name" placeholder="Tu nombre">
+      <label for="f-addr">Dirección y comuna</label>
+      <input id="f-addr" autocomplete="street-address" placeholder="Calle, número y comuna">
+    </div>
+    <a class="btn btn-primary" id="checkout" href="#" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
+    <p class="note">Te respondemos con la confirmación y el link de pago.</p>
+    <p class="note warn" id="checkout-note" hidden>Falta configurar el número de WhatsApp de la tienda (variable WHATSAPP en Railway).</p>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var RIPE = {
+    hoy:{label:'Para hoy', skin:'#2E2329', firm:1, firmLabel:'blanda', text:'Piel casi negra y cede apenas al apretarla con la palma. Lista para la once.'},
+    dias:{label:'En 2–3 días', skin:'#414B27', firm:2, firmLabel:'media', text:'Piel verde oscuro con tonos morados. Llega firme y está lista en 2 a 3 días fuera del refri.'},
+    semana:{label:'En la semana', skin:'#5A8530', firm:3, firmLabel:'dura', text:'Piel verde y dura. Déjala en la cocina y estará lista en 5 a 7 días.'}
+  };
+  var P = {
+    'hass-1':{name:'Palta Hass Primera', fmt:'Bolsa 1 kg', price:4990},
+    'hass-3':{name:'Palta Hass Primera', fmt:'Caja 3 kg', price:13490},
+    'surt-1':{name:'Palta Hass Surtida', fmt:'Bolsa 1 kg', price:3490},
+    'surt-3':{name:'Palta Hass Surtida', fmt:'Caja 3 kg', price:9490},
+    'escalonada':{name:'Caja escalonada', fmt:'5 kg', price:21990, freeShip:true}
+  };
+  var SHIP = 2990, FREE_FROM = 20000, KEY = 'palcuesco-pedido';
+
+  function clp(n){ return '$' + String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+
+  // Contacto: viene de las variables de Railway (WHATSAPP, EMAIL, INSTAGRAM)
+  var CFG = window.PALCUESCO_CONFIG || {};
+  var WA = String(CFG.whatsapp || '').replace(/\D/g, '');
+  var IG = String(CFG.instagram || 'palcuesco').replace(/^@/, '');
+  function fmtPhone(d){ return (d.length === 11 && d.indexOf('569') === 0) ? '+56 9 ' + d.slice(3, 7) + ' ' + d.slice(7) : '+' + d; }
+  function applyContact(){
+    document.querySelectorAll('a[data-wa]').forEach(function(a){
+      if (WA){ a.href = 'https://wa.me/' + WA; a.target = '_blank'; a.rel = 'noopener'; a.textContent = (a.dataset.waLabel || '') + fmtPhone(WA); }
+    });
+    document.querySelectorAll('[data-wa-row]').forEach(function(li){ li.hidden = !WA; });
+    if (CFG.email){
+      document.querySelectorAll('[data-email-row]').forEach(function(li){ li.hidden = false; });
+      document.querySelectorAll('a[data-email]').forEach(function(a){ a.href = 'mailto:' + CFG.email; a.textContent = CFG.email; });
+    }
+    document.querySelectorAll('a[data-ig]').forEach(function(a){
+      a.href = 'https://www.instagram.com/' + IG + '/';
+      if (a.textContent.indexOf('@') > -1) a.textContent = a.textContent.replace(/@[\w.]+/, '@' + IG);
+    });
+  }
+
+  // Hora de Santiago y cierre de pedidos del día (13:00)
+  var CUTOFF_MIN = 13 * 60;
+  function santiagoMinutes(){
+    try {
+      var parts = new Intl.DateTimeFormat('en-US', {timeZone:'America/Santiago', hour:'numeric', minute:'numeric', hourCycle:'h23'}).formatToParts(new Date());
+      var h = 0, m = 0;
+      parts.forEach(function(p){ if (p.type === 'hour') h = +p.value % 24; if (p.type === 'minute') m = +p.value; });
+      return h * 60 + m;
+    } catch(e) { var d = new Date(); return d.getHours() * 60 + d.getMinutes(); }
+  }
+  function arrival(){ return santiagoMinutes() < CUTOFF_MIN ? 'hoy' : 'mañana'; }
+  function updateCutoff(){
+    var left = CUTOFF_MIN - santiagoMinutes(), el = document.getElementById('cutoff-text');
+    if (!el) return;
+    if (left > 0){
+      var h = Math.floor(left / 60), m = left % 60;
+      el.textContent = 'Pide en las próximas ' + (h ? h + ' h ' : '') + m + ' min y te llega hoy';
+    } else {
+      el.textContent = 'Pide ahora y te llega mañana';
+    }
+  }
+
+  var cart = [];
+  try { var raw = JSON.parse(localStorage.getItem(KEY) || '[]'); if (Array.isArray(raw)) cart = raw; } catch(e) {}
+  cart = cart.filter(function(it){ return it && P[it.id] && (RIPE[it.ripe] || it.ripe === 'mix') && it.qty > 0; });
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch(e) {} }
+
+  var $ = function(id){ return document.getElementById(id); };
+  var drawer = $('drawer'), scrim = $('scrim'), itemsEl = $('items'), countEl = $('cart-count');
+  var note = $('checkout-note'), lastFocus = null;
+
+  function swatch(it){
+    if (it.ripe === 'mix') return 'linear-gradient(90deg,#2E2329 33%,#414B27 33% 66%,#5A8530 66%)';
+    return P[it.id].fixedSkin || RIPE[it.ripe].skin;
+  }
+  function meta(it){
+    if (it.ripe === 'mix') return P[it.id].fmt + ' · hoy, +3 y +6 días';
+    return P[it.id].fmt + ' · ' + RIPE[it.ripe].label;
+  }
+
+  function render(){
+    var count = 0, sub = 0, free = false;
+    cart.forEach(function(it){ count += it.qty; sub += it.qty * P[it.id].price; if (P[it.id].freeShip) free = true; });
+    countEl.textContent = count;
+    $('open-cart').setAttribute('aria-label', 'Abrir pedido, ' + count + (count === 1 ? ' producto' : ' productos'));
+
+    if (!cart.length){
+      itemsEl.innerHTML = '<div class="empty"><p>Tu pedido está vacío. Parte con un kilo de Hass para hoy.</p><button class="btn btn-ghost" type="button" id="empty-go">Ver paltas</button></div>';
+      $('empty-go').addEventListener('click', function(){ closeCart(); location.hash = 'paltas'; });
+    } else {
+      itemsEl.innerHTML = cart.map(function(it, i){
+        return '<div class="item">' +
+          '<span class="item-sw" style="background:' + swatch(it) + '"></span>' +
+          '<div class="item-info"><span class="item-name">' + P[it.id].name + '</span><span class="item-meta">' + meta(it) + '</span>' +
+          '<button class="remove" type="button" data-rm="' + i + '">Quitar</button></div>' +
+          '<div class="item-right"><span class="item-price">' + clp(it.qty * P[it.id].price) + '</span>' +
+          '<span class="qty"><button type="button" data-dec="' + i + '" aria-label="Quitar uno">−</button><span>' + it.qty + '</span><button type="button" data-inc="' + i + '" aria-label="Agregar uno">+</button></span></div>' +
+          '</div>';
+      }).join('');
+    }
+
+    var shipFree = free || sub >= FREE_FROM;
+    var ship = (sub === 0 || shipFree) ? 0 : SHIP;
+    $('t-sub').textContent = clp(sub);
+    $('t-ship').textContent = sub === 0 ? '—' : (shipFree ? 'Gratis' : clp(ship));
+    $('t-total').textContent = clp(sub + ship);
+    var hint = $('ship-hint');
+    var when = arrival();
+    if (sub === 0) hint.textContent = 'Despacho gratis sobre ' + clp(FREE_FROM) + '.';
+    else if (shipFree) hint.textContent = 'Tu despacho va gratis y te llega ' + when + '.';
+    else hint.textContent = 'Te faltan ' + clp(FREE_FROM - sub) + ' para el despacho gratis. Te llega ' + when + '.';
+    $('checkout').setAttribute('aria-disabled', sub === 0 ? 'true' : 'false');
+  }
+
+  function orderText(){
+    var lines = ['Hola Palcuesco, quiero hacer este pedido:', ''], sub = 0, free = false;
+    cart.forEach(function(it){
+      var p = P[it.id], total = it.qty * p.price; sub += total; if (p.freeShip) free = true;
+      var ripe = it.ripe === 'mix' ? 'hoy, +3 y +6 días' : RIPE[it.ripe].label.toLowerCase();
+      lines.push('• ' + it.qty + ' × ' + p.name + ', ' + p.fmt + ' (' + ripe + '): ' + clp(total));
+    });
+    var shipFree = free || sub >= FREE_FROM, ship = shipFree ? 0 : SHIP;
+    lines.push('', 'Subtotal: ' + clp(sub), 'Despacho: ' + (shipFree ? 'Gratis' : clp(ship)), 'Total: ' + clp(sub + ship), '', 'Entrega: ' + arrival());
+    var n = $('f-name').value.trim(), a = $('f-addr').value.trim();
+    lines.push('Nombre: ' + (n || '(escríbelo aquí)'), 'Dirección: ' + (a || '(escríbela aquí)'));
+    return lines.join('\n');
+  }
+
+  itemsEl.addEventListener('click', function(e){
+    var t = e.target.closest('button'); if (!t) return;
+    if (t.dataset.inc != null) cart[+t.dataset.inc].qty++;
+    else if (t.dataset.dec != null){ var i = +t.dataset.dec; cart[i].qty--; if (cart[i].qty < 1) cart.splice(i, 1); }
+    else if (t.dataset.rm != null) cart.splice(+t.dataset.rm, 1);
+    else return;
+    note.hidden = true; save(); render();
+  });
+
+  function add(id, ripe){
+    var key = id + '|' + ripe;
+    var found = cart.find(function(it){ return it.id + '|' + it.ripe === key; });
+    if (found) found.qty++; else cart.push({id:id, ripe:ripe, qty:1});
+    note.hidden = true; save(); render(); openCart();
+  }
+
+  function openCart(){
+    lastFocus = document.activeElement;
+    scrim.hidden = false;
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function(){ $('close-cart').focus(); }, 30);
+  }
+  function closeCart(){
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    scrim.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  $('open-cart').addEventListener('click', openCart);
+  $('close-cart').addEventListener('click', closeCart);
+  scrim.addEventListener('click', closeCart);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && drawer.classList.contains('open')) closeCart(); });
+  $('checkout').addEventListener('click', function(e){
+    if (!cart.length){ e.preventDefault(); return; }
+    if (!WA){ e.preventDefault(); note.hidden = false; return; }
+    this.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(orderText());
+  });
+  // Recordar nombre y dirección en este navegador
+  var DKEY = 'palcuesco-datos';
+  try { var dd = JSON.parse(localStorage.getItem(DKEY) || '{}'); if (dd.n) $('f-name').value = dd.n; if (dd.a) $('f-addr').value = dd.a; } catch(e) {}
+  ['f-name', 'f-addr'].forEach(function(id){
+    $(id).addEventListener('input', function(){ try { localStorage.setItem(DKEY, JSON.stringify({n: $('f-name').value, a: $('f-addr').value})); } catch(e) {} });
+  });
+
+  // Hero: selector de madurez
+  var stage = $('stage'), pips = $('pips'), ripeText = $('ripe-text');
+  stage.querySelectorAll('.seg button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var r = b.dataset.ripe;
+      stage.dataset.ripe = r;
+      stage.querySelectorAll('.seg button').forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      ripeText.textContent = RIPE[r].text;
+      pips.querySelectorAll('.pip').forEach(function(p, i){ p.classList.toggle('on', i < RIPE[r].firm); });
+      pips.setAttribute('aria-label', 'Firmeza: ' + RIPE[r].firmLabel);
+    });
+  });
+  $('hero-add').addEventListener('click', function(){ add('hass-1', stage.dataset.ripe); });
+
+  // Tarjetas de producto
+  document.querySelectorAll('.product').forEach(function(card){
+    var id = card.dataset.id, art = card.querySelector('.product-art');
+    card.querySelectorAll('input[type=radio]').forEach(function(r){
+      r.addEventListener('change', function(){
+        if (card.dataset.darkens && r.checked) art.style.setProperty('--skin', RIPE[r.value].skin);
+      });
+    });
+    card.querySelector('.add').addEventListener('click', function(){
+      var sel = card.querySelector('input[type=radio]:checked');
+      add(id, sel ? sel.value : 'hoy');
+    });
+  });
+  $('pack-add').addEventListener('click', function(){ add('escalonada', 'mix'); });
+
+  applyContact();
+  render();
+  updateCutoff();
+  setInterval(function(){ updateCutoff(); render(); }, 30000);
+})();
+</script>
+</body>
+</html>
